@@ -1,0 +1,143 @@
+﻿<Window x:Class="GraphicalClient.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Viewbox>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="8*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="8*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <Label Content="Format:" Grid.Column="0" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center"/>
+            <RadioButton x:Name="Xml" Content="XML" Grid.Column="1" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" IsChecked="True"/>
+            <RadioButton x:Name="Json" Content="JSON" Grid.Column="2" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center"/>
+            <Border BorderBrush="Black" BorderThickness="1" Grid.Row="2" Grid.ColumnSpan="4">
+                <StatusBar Grid.ColumnSpan="4" HorizontalAlignment="Left" Height="42" Grid.Row="2" VerticalAlignment="Top" Width="792">
+                    <Label x:Name="Status" Grid.Row="2" Grid.ColumnSpan="4" HorizontalAlignment="Left" Width="792" VerticalAlignment="Center"/>
+                </StatusBar>
+            </Border>
+            <TabControl x:Name="TabControl" Grid.ColumnSpan="4" HorizontalAlignment="Left" Height="335" Grid.Row="1" VerticalAlignment="Top" Width="792">
+                <TabItem x:Name="GetAll" Header="Get all">
+                    <Grid Background="#FFE5E5E5">
+                        <ScrollViewer Grid.Row="2" Grid.ColumnSpan="3">
+                            <TextBlock x:Name="GetAllTextBlock" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap"  Text="" VerticalAlignment="Top" MinHeight="287" MinWidth="766"/>
+                        </ScrollViewer>
+                    </Grid>
+                </TabItem>
+                <TabItem x:Name="GetById" Header="Get by ID">
+                    <Grid Background="#FFE5E5E5">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="6*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="8*"/>
+                        </Grid.RowDefinitions>
+                        <Button x:Name="GetByIdButton" Grid.ColumnSpan="1" Content="Get" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Width="75" Grid.RowSpan="2"/>
+                        <TextBox x:Name="GetByIdId"  Grid.Column="1" HorizontalAlignment="Center" Height="24" Margin="0" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="120" Grid.Row="1"  Grid.RowSpan="1"/>
+                        <Label Content="ID" Grid.Column="1" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center"/>
+                        <Border BorderBrush="Black" BorderThickness="1" Grid.Row="2" Grid.ColumnSpan="3" Margin="10">
+                            <TextBlock x:Name="GetByIdTextBlock" HorizontalAlignment="Left" Grid.Row="2" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Grid.ColumnSpan="3" Height="226" Width="766" Margin="0"/>
+                        </Border>
+                    </Grid>
+                </TabItem>
+                <TabItem x:Name="GetByTitle" Header="Get by title">
+                    <Grid Background="#FFE5E5E5">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="6*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="8*"/>
+                        </Grid.RowDefinitions>
+                        <Button x:Name="GetByTitleButton" Grid.ColumnSpan="1" Content="Get" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Width="75" Grid.RowSpan="2"/>
+                        <TextBox x:Name="GetByTitleTitle"  Grid.Column="1" HorizontalAlignment="Center" Height="24" Margin="0" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="120" Grid.Row="1"  Grid.RowSpan="1"/>
+                        <Label Content="Title" Grid.Column="1" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center"/>
+                        <Border BorderBrush="Black" BorderThickness="1" Grid.Row="2" Grid.ColumnSpan="3" Margin="10">
+                            <ScrollViewer Grid.Row="2" Grid.ColumnSpan="3">
+                                <TextBlock x:Name="GetByTitleTextBlock" HorizontalAlignment="Left" Grid.Row="2" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Grid.ColumnSpan="3" MinHeight="226" MinWidth="766" Margin="0"/>
+                            </ScrollViewer>
+                        </Border>
+                    </Grid>
+                </TabItem>
+                <TabItem x:Name="AddToInventory" Header="Add to inventory">
+                    <Grid Background="#FFE5E5E5">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="2*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="8*"/>
+                        </Grid.RowDefinitions>
+                        <Button x:Name="AddButton" Grid.ColumnSpan="1" Content="Add" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Width="75" Grid.RowSpan="2"/>
+                        <TextBox x:Name="AddId"  Grid.Column="1" HorizontalAlignment="Center" Height="24" Margin="0" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="120" Grid.Row="1"  Grid.RowSpan="1"/>
+                        <Label Content="ID" Grid.Column="1" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center"/>
+                        <TextBox x:Name="AddTitle"  Grid.Column="2" HorizontalAlignment="Center" Height="24" Margin="0" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="120" Grid.Row="1"  Grid.RowSpan="1"/>
+                        <Label Content="Title" Grid.Column="2" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center"/>
+                        <TextBox x:Name="AddPrice"  Grid.Column="3" HorizontalAlignment="Center" Height="24" Margin="0" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="120" Grid.Row="1"  Grid.RowSpan="1"/>
+                        <Label Content="Price" Grid.Column="3" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center"/>
+                    </Grid>
+                </TabItem>
+                <TabItem x:Name="Sell" Header="Sell">
+                    <Grid Background="#FFE5E5E5">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="6*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="8*"/>
+                        </Grid.RowDefinitions>
+                        <Button x:Name="SellButton" Grid.ColumnSpan="1" Content="Sell" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Width="75" Grid.RowSpan="2"/>
+                        <TextBox x:Name="SellId"  Grid.Column="1" HorizontalAlignment="Center" Height="24" Margin="0" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="120" Grid.Row="1"  Grid.RowSpan="1"/>
+                        <Label Content="ID" Grid.Column="1" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center"/>
+                    </Grid>
+                </TabItem>
+                <TabItem x:Name="ChangePrice" Header="Change price">
+                    <Grid Background="#FFE5E5E5">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="2*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="8*"/>
+                        </Grid.RowDefinitions>
+                        <Button x:Name="ChangePriceButton" Grid.ColumnSpan="1" Content="Change" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Width="75" Grid.RowSpan="2"/>
+                        <TextBox x:Name="ChangePriceId"  Grid.Column="1" HorizontalAlignment="Center" Height="24" Margin="0" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="120" Grid.Row="1"  Grid.RowSpan="1"/>
+                        <Label Content="ID" Grid.Column="1" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center"/>
+                        <TextBox x:Name="ChangePricePrice"  Grid.Column="2" HorizontalAlignment="Center" Height="24" Margin="0" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="120" Grid.Row="1"  Grid.RowSpan="1"/>
+                        <Label Content="Price" Grid.Column="2" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center"/>
+                    </Grid>
+                </TabItem>
+            </TabControl>
+        </Grid>
+    </Viewbox>
+</Window>
